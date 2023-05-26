@@ -1,0 +1,47 @@
+﻿@Model MVCProject1.Models.Student;
+<h1>Profile</h1>
+@TempData["msg"]
+@ViewBag.msg
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                <td>@Model.id</td>
+                <td>@Model.name</td>
+                <td>@Model.email</td>
+                <td>@Model.password</td>
+                <td>@Model.phone</td>
+                <td>@Model.dob</td>
+                <td>@Model.address</td>
+                <td>
+                    @if (Model.image != "")
+                    {
+                        <img src="@Url.Content(Model.image)" style="width:100px;height:100px" />
+                    }
+                </td>
+            </tr>
+        
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="8">
+                <form method="post">
+                    <input type="submit" value="Logout"/>
+                </form>
+            <td>
+        </tr>
+    </tfoot>
+</table>
